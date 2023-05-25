@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import './main.scss';
 import BoardComp from './components/board/board';
 import { useEffect, useState } from 'react';
 import { Board } from './models/Board';
 import { Player } from './models/player';
 import { Colors } from './models/Colors';
-import LostFigures from './components/lostFigures/lostFigures';
 import Timer from './components/Timer/Timer';
 
 const App = () => {

@@ -30,6 +30,7 @@ const BoardComp: FC<BoardProps> = ({board, setBoard, currentPlayer,swapPlayer}) 
 
   useEffect(() => {
     highlightCells()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCell]) 
 
   function highlightCells() {

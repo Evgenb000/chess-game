@@ -16,6 +16,7 @@ const App = () => {
   useEffect(() => {
     restart()
     setCurrentPlayer(whitePlayer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function swapPlayer() {

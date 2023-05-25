@@ -1,0 +1,19 @@
+@import '../../scss/vars.scss';
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+
+  &__button {
+    border: 0;
+    height: 40px;
+    border-radius: 12px;
+    margin-top: 8px;
+    background-color: $colorCell-selected;
+  }
+
+  &__time {
+    margin-top: 8px;
+  }
+}

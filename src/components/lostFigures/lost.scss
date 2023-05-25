@@ -1,0 +1,7 @@
+@import '../../scss/vars.scss';
+
+.lost {
+  height: calc(36vh - $cellSize);
+  padding: 30px;
+  margin-left: 50px;
+}

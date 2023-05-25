@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './main.scss';
+import BoardComp from './components/board/board';
+import { useEffect, useState } from 'react';
+import { Board } from './models/Board';
+import { Player } from './models/player';
+import { Colors } from './models/Colors';
+import LostFigures from './components/lostFigures/lostFigures';
+import Timer from './components/Timer/Timer';
 
-function App() {
+const App = () => {
+  const [board, setBoard] = useState(new Board())
+  const [whitePlayer, setWhitePlayer] = useState(new Player(Colors.WHITE));
+  const [blackPlayer, setBlackPlayer] = useState(new Player(Colors.BLACK));
+  const [currentPlayer, setCurrentPlayer] = useState<Player | null>(null);
+
+  useEffect(() => {
+    restart()
+    setCurrentPlayer(whitePlayer);
+  }, [])
+
+  function swapPlayer() {
+    setCurrentPlayer(currentPlayer?.color === Colors.WHITE ? blackPlayer : whitePlayer)
+  }
+
+  function restart() {
+    const newBoard = new Board();
+    newBoard.initCells();
+    newBoard.addFigures();
+    setBoard(newBoard);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='content'>
+      <h1 className="content__title">Chess</h1>
+      <h2 className="content__currentP">Current player: <div className="content__currentP-wb">{currentPlayer?.color}</div></h2>
+      <Timer
+        restart={restart}
+        currentPlayer={currentPlayer}
+      />
+
+      <BoardComp
+        board={board}
+        setBoard={setBoard}
+        currentPlayer={currentPlayer}
+        swapPlayer={swapPlayer} 
+      />
+
     </div>
-  );
+  )
 }
 
 export default App;

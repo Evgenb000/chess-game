@@ -1,0 +1,39 @@
+@import '../../main.scss';
+
+.white {
+  background-color: $colorCell-white;
+}
+
+.black {
+  background-color: $colorCell-black;
+}
+
+.board__cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $cellSize;
+  width: $cellSize;
+  box-sizing: border-box;
+
+  &-img {
+    width: $cellImgSize;
+    height: $cellImgSize;
+    position: relative;
+  }
+
+  &-selected {
+    background-color: $colorCell-selected;
+  }
+
+  &-available {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: $colorCell-selected;
+  }
+
+  &-enemy {
+    background-color: $colorCell-enemy;
+  }
+}

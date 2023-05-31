@@ -45,7 +45,6 @@ const App = () => {
         currentPlayer={currentPlayer}
         swapPlayer={swapPlayer} 
       />
-
     </div>
   )
 }

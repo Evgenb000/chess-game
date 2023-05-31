@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 import { Cell } from "../Cell";
 import { Colors } from "../Colors";
 import { Figure, FigureNames } from "./Figure";
